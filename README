@@ -1,0 +1,18 @@
+----CONTENU DANS CE DOSSIER----
+- Produit_2Matrices_Parallele.c : Le programme permettant de calculer en parallèle le produit de 2 matrices carrées.
+- PageRank_para.c : Le programme permettant de calculer le score PageRank à partir d'une matrice A prédéfinie dans le programme.
+- Le rapport du projet.
+- Un dossier annexe contenant: un fichier PageRank_seq.c qui calcule le score PageRank en séquentiel.
+
+
+----REMARQUE GENERALE----------
+Les inputs des deux programmes (les matrice m1,m2,A) sont définis directement dans le code. La taille des matrices est actuellement n = 12 mais peut être changé. 
+Si vous passez à une valeur n<12, attention au code d'initialisation des matrices (il faut supprimer l'initialisation pour les lignes non déclarées)  
+
+----REMARQUE POUR LA COMPILATION ET LANCEMENT DU PROGRAMME----
+- Dans mon programme j'utilise quelques fonctions mathématiques qui nécessitent le fichier libm.so. Il faut donc juste ajouter l'option -lm à la commande de compilation. Par example : 
+mpicc PageRank_para.c -o PageRank -lm
+
+- Comme j'explique dans le rapport, le programme est écrit pour lancer avec un nombre de processus p = q*q, q étant un entier  naturel et q divise n. Si le nombre de processus ne satisfait pas ce critère, un message de notification sera affichée.  Par example, une commande comme:  
+mpiexec -n 4 ./PageRank ou mpiexec -n 9 ./PageRank
+va lancer correctement le programme
