@@ -1,0 +1,17 @@
+----CONTENU DANS CE DOSSIER----
+- Eigenvalues_power_iteration.c : Le programme permettant de calculer la plus grande valeur propre d'une matrice carrée
+- Eigenvalues_jacobi_iteration.c : Le programme permettant de calculer les valeurs propres d'une matrice carrée symétrique 
+Eigenvalues_QR.c : Le programme permettant de calculer les valeurs propres d'une matrice carrée
+- IS1240_Raport_Final_VUONG_Thi_Anh_Tuyet.pdf : Le rapport écrit du projet.
+- IS1240_Presentation_Final_VUONG_Thi_Anh_Tuyet.ppt : Les slides de la présentation du projet
+
+
+----REMARQUE GENERALE----------
+La matrice A est définie directement dans le code. La taille des matrices est actuellement n = 12.  
+Le nombre d'itérations pour chaque méthode peut-être changé via la variable nbIteration 
+
+----REMARQUE POUR LA COMPILATION ET LANCEMENT DU PROGRAMME----
+- Dans mon programme j'utilise quelques fonctions mathématiques qui nécessitent le fichier libm.so. Si la compilation échoue, il faut donc juste ajouter l'option -lm à la commande de compilation.
+
+- Comme j'explique dans le rapport, le programme est écrit pour lancer avec un nombre de processus p = q*q, q étant un entier naturel et q divise n. Si le nombre de processus ne satisfait pas ce critère, un message de notification sera affichée.  Par example, une commande comme:  
+Par exemple pour n = 12, le nombre de processus = 4 ou 9 sera accepté.
